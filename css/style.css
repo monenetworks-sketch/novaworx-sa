@@ -179,6 +179,7 @@ h4 { font-size: 1.2rem; }
   left: 0;
   right: 0;
   z-index: 1000;
+  overflow: visible;
   padding: 1rem 0;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
@@ -1469,22 +1470,35 @@ textarea {
   .nav-links.open {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    bottom: 0;
     background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(16px);
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    z-index: 999;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 1rem 0;
+    gap: 0;
+    z-index: 998;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav-links.open li {
+    width: 100%;
   }
 
   .nav-links.open a {
-    font-size: 1.3rem;
-    padding: 0.75rem 2rem;
+    display: block;
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .nav-links.open li:last-child a {
+    border-bottom: none;
   }
 
   .hero-content {
